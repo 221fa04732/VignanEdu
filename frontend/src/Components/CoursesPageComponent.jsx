@@ -1,6 +1,6 @@
 export default function CoursesPageComponent()
 {
-    return(<div className="bg-lime-500 h-screen">
+    return(<div className="h-screen">
             CoursesPage
         </div>)
 }

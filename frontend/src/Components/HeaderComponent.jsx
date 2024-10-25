@@ -7,7 +7,7 @@ import ProfileComponent from "./ProfileComponent";
 
 export default function HeaderComponent()
 {
-    return(<div className="bg-green-500 fixed w-full h-12 z-10 flex items-center justify-between pl-2.5 pr-2.5 ">
+    return(<div className="bg-white fixed w-full h-12 z-1 flex items-center justify-between pl-2.5 pr-2.5 border-b">
         <div className="flex items-center w-0 lg:w-36 fixed lg:static">
             <LogoComponent />   
         </div>
