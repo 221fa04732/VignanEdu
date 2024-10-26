@@ -8,6 +8,15 @@ export default function HeaderButtonComponent({name, path})
     return(<div className="p-1.5 font-medium text-xl font-serif">
             <button onClick={()=>{
                 changePath(path);
+                ScrollTop()
             }}>{name}</button>
         </div>)
+}
+
+function ScrollTop()
+{
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
 }

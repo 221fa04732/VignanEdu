@@ -10,6 +10,6 @@ export default function LightDarkModeComponent()
 
             <button onClick={()=>{
                 lightDarkModeState(lightDarkModeValue === 0 ? 1 : 0)
-            }} >{lightDarkModeValue ===0 ? <img className="h-5 w-5" src="./light_mode.png"/> : <img className="h-5 w-5"src="/dark_mode.png" /> }</button>
+            }} >{lightDarkModeValue ===0 ? <img className="max-h-5 max-w-5 "src="/dark_mode.png" /> : <img className="max-h-5 max-w-5" src="./light_mode.png"/> }</button>
         </div>)
 }
