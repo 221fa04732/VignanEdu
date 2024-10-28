@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node": "^22.10.0"
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.7.3",
+    "node": "^23.1.0",
+    "zod": "^3.23.8"
   }
 }

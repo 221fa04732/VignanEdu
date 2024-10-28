@@ -4,17 +4,18 @@ import SearchBoxComponent from "./SearchBoxComponent";
 import NotificationComponent from "./NotificationComponent";
 import LightDarkModeComponent from "./LightDarkModeComponent";
 import ProfileComponent from "./ProfileComponent";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState, useRecoilState } from "recoil";
 import { LightDarkModeAtom } from "../Atoms/LightDarkModeAtom";
 import {MobileMenuAtom} from "../Atoms/MobileMenuAtom"
+import MorePageButtonComponent from "./MorePageComponent";
 
 export default function HeaderComponent()
 {
     const mobilemenuvalue = useRecoilValue(MobileMenuAtom)
     const mobilemenustate = useSetRecoilState(MobileMenuAtom)
-
     const LightDarkModeValue = useRecoilValue(LightDarkModeAtom)
-    return(<div className={`${LightDarkModeValue === 1 ? 'bg-stone-900' :'bg-white' } fixed w-full h-12 z-1 flex items-center justify-between pl-2.5 pr-2.5 border-b ${LightDarkModeValue === 1 ? 'border-white' : 'border-gray-400'}`}>
+
+    return(<div className={`${LightDarkModeValue === 1 ? 'bg-stone-900' :'bg-white' } fixed w-full h-12 z-10 flex items-center justify-between pl-2.5 pr-2.5 border-b ${LightDarkModeValue === 1 ? 'border-white' : 'border-gray-400'}`}>
         <div className="flex items-center w-0 lg:w-36 fixed lg:static">
             <LogoComponent />   
         </div>

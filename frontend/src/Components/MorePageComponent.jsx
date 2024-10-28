@@ -1,7 +1,7 @@
-export default function MorePageComponent() {
-    return (
-        <div className=" bg-blue-900 h-screen">
-            MorePage
-        </div>
-    )
+
+export default function MorePageComponent()
+{
+    return(<div>
+        more  page 
+    </div>)  
 }
