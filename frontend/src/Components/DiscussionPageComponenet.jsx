@@ -16,7 +16,7 @@ export default function DiscussionPageComponent()
                 Make sure you follow the community guidelines and message responsibily.
             </div>
             <div className="relative flex flex-col justify-center items-center">
-                <input type="textbox" placeholder="Discuss your problem here....." className={`mt-10 w-full h-80 rounded-2xl p-6 justify-center items-start bg-stone-900 outline-none shadow-[0_5px_5px_1px_rgba(189,189,189,0.9)]  ${lightdarkmode === 1 ? 'bg-stone-900'  : 'bg-white'} ${lightdarkmode === 1 ? 'text-gray-400' : 'text-black'}`} />
+                <input type="textbox" placeholder="Discuss your problem here....." className={`mt-10 w-full h-80 rounded-2xl p-6 justify-center items-start bg-stone-900 outline-none shadow-[0_5px_5px_5px_rgba(189,189,189,0.9)]  ${lightdarkmode === 1 ? 'bg-stone-900'  : 'bg-white'} ${lightdarkmode === 1 ? 'text-gray-400' : 'text-black'}`} />
                 <button className="absolute bottom-5 right-10 w-56 border-2 rounded-2xl border-sky-400">Post</button>
             </div>
         </div>

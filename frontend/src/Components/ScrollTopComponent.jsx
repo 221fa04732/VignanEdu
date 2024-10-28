@@ -27,7 +27,7 @@ function ScrollToTop() {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className={`fixed bottom-10 inset-x-1/2 h-7 w-7 rounded-full shadow-lg  transition duration-300 ease-in-out bg-blue-400`}> ↑ </button>
+          className={`fixed bottom-10 inset-x-1/2 h-7 w-7 rounded-full shadow-lg  transition duration-300 ease-in-out bg-blue-400 z-10`}> ↑ </button>
       )}
     </div>
   );
