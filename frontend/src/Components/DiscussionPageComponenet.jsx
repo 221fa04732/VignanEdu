@@ -6,274 +6,346 @@ export default function DiscussionPageComponent()
 {
     const [lightdarkmode, setLightDarkMode] = useRecoilState(LightDarkModeAtom);
 
-    return(<div className={`w-screen h-screen text-2xl ${lightdarkmode === 1 ? 'text-gray-400' : 'text-black'}    bg-stone-900 p-10 overflow-x-hidden ${lightdarkmode === 1 ? ' bg-stone-900' : 'bg-white'}`}>
-        {/* *************************Post a new Discussion****************** */}
-        <div className="border-b-2 rounded-3xl">
-            <h1 className="text-5xl border-b-2 p-3">Discussions</h1>
-            <div className="mt-8">
-                Hello Learner ! <br />
+    return(<div className={`pt-5 text-2xl ${lightdarkmode === 1 ? 'bg-stone-900'  : 'bg-white'} ${lightdarkmode === 1 ? 'text-gray-400' : 'text-black'}`}>
+          {/* *************************Post a new Discussion****************** */}
+          <div className="rounded-3xl mx-16 flex flex-col align-center justify-center">
+            <center><h1 className="w-64 text-5xl border-b-2 text-sky-400 font-serif">Discussions</h1></center>
+            <div className="mt-10 font-serif text-xl">
+                <div className='text-blue-400 text-2xl' >Hello Learner !</div>
                 Welcome to Discussions, here you can Post your doubts/problems and also you can answer others doughts.
                 Make sure you follow the community guidelines and message responsibily.
             </div>
-            <div className="flex flex-col justify-center items-center">
-                <input type="textbox" placeholder="Discuss your problem here....." className="mt-10 w-full h-80 rounded-2xl p-6 justify-center items-start" />
-                <button className="m-10 w-56 h-10 border-2 rounded-2xl hover:bg-slate-50 hover:text-stone-900">Post</button>
+            <div className="relative flex flex-col justify-center items-center">
+                <input type="textbox" placeholder="Discuss your problem here....." className={`mt-10 w-full h-80 rounded-2xl p-6 justify-center items-start bg-stone-900 outline-none shadow-[0_5px_5px_1px_rgba(189,189,189,0.9)]  ${lightdarkmode === 1 ? 'bg-stone-900'  : 'bg-white'} ${lightdarkmode === 1 ? 'text-gray-400' : 'text-black'}`} />
+                <button className="absolute bottom-5 right-10 w-56 border-2 rounded-2xl border-sky-400">Post</button>
             </div>
         </div>
         {/* **********************************Pre-default Discussions********************************** */}
 
         <div className="mt-10 w-full h-full flex flex-col justify-start items-center gap-10">
-            <h1 className="text-5xl mt-6 mb-9">Previous Discussions</h1>
-            
-            {/* *************************user-1**************************** */}
-            <div className="w-11/12 h-44 border-2 rounded-3xl flex justify-start items-start p-4">
-                {/* ************************user-img***************************** */}
-                <div className="w-32 h-full flex flex-col border-r-2 pr-6 border-blue-400 cursor-pointer">
-                    <img src="user-blue.png" alt="logo" className="w-32 h-12 rounded-3xl object-contain"/>
-                        <p className="ml-2 text-center mt-2 text-xl">Lohith Jalla</p>
-                </div>
-                {/* ********************user-question***************************** */}
-                <div className="m-4 w-full h-full">
-                    <details className="py-4 text-3xl ">
-                        <summary classNameName="flex justify-between items-center cursor-pointer">
-                            What's the best way to prepare for coding interviews?
-                        </summary>
-                        <p className="mt-3 text-xl px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
-                    </details>
-                </div>
-            </div>  
+            <h1 className="text-5xl mt-6 mb-9 font-serif hover:text-blue-400">Previous Discussions</h1> 
+        </div>
 
-            {/* *************************user-2**************************** */}
-            <div className="w-11/12 h-44 border-2 rounded-3xl flex justify-start items-start p-4 ">
-                {/* ************************user-img***************************** */}
-                <div className="w-32 h-full flex flex-col border-r-2 pr-6 border-orange-400 cursor-pointer">
-                    <img src="user-orange.jpg" alt="logo" className="w-32 h-12 rounded-3xl object-contain"/>
-                    <p className="ml-2 text-center mt-2 text-xl">Mrityunjay Kumar</p>
+    {/* new discussions */}
+
+        <div className='flex flex-col justify-center items-center p-5'>
+            <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
+                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                    <div className='border-b border-blue-400 pb-1'>
+                    <img className='h-8 w-8  ' src="man.png" />
+                    </div>
+                    <p>Mrityunjay</p> 
+                    <p>Kumar</p>
                 </div>
-                {/* ********************user-question***************************** */}
-                <div className="m-4 w-full h-full">
-                    <details className="py-4 text-3xl ">
-                        <summary className="flex justify-between items-center cursor-pointer">
-                            Is it possible to detect IP address of different people logged in just 1 account?
-                        </summary>
-                        <p className="mt-3 text-xl px-10 overflow-hidden">Possibly. If you are connecting from different networks, such as each of you working from home, then absolutely yes. If you are all on the same network, such as connecting from your own work computer from the same office, or in different offices but your corporate network is "joined" and only has one connection to the internet such as from one office, then you would likely all have the same IP address. Regardless of IP address they would likely be able to see that you are logged in as three simultaneous sessions which would be odd.</p>
-                    </details>
+                <div className='flex flex-col w-full'>
+                    <div className='mb-3'>
+                        <details class="border-b border-gray-300 py-4 text-base ">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                What's the best way to prepare for coding interviews?
+                            </summary>
+                            <p class="mt-3  text-base px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
+                        </details>
+                    </div>
+                    <div className='flex justify-between items-center'>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
+                            <p className='font-serif text-lg mr-3'>500k+</p>
+                            <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
+                            <p className='font-serif text-lg'>23k+</p>
+                        </div>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
+                            <button><img className='h-5 w-5 mr-3' src="down.png" /></button>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        
+    {/* new discussions */}
 
-            {/* *************************user-3**************************** */}
-            <div className="w-11/12 h-44 border-2 rounded-3xl flex justify-start items-start p-4">
-                {/* ************************user-img***************************** */}
-                <div className="w-32 h-full flex flex-col border-r-2 pr-6 border-black-400 cursor-pointer">
-                    <img src="user-black.png" alt="logo" className="w-32 h-12 rounded-3xl object-contain"/>
-                    <p className="ml-2 text-center mt-2 text-xl">Anurag ojha</p>
+    <div className='flex flex-col justify-center items-center p-5'>
+            <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
+                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                    <div className='border-b border-blue-400 pb-1'>
+                    <img className='h-8 w-8  ' src="man-1.png" />
+                    </div>
+                    <p>Jalla</p> 
+                    <p>Lohith</p>
                 </div>
-                {/* ********************user-question***************************** */}
-                <div className="m-4 w-full h-full">
-                    <details className="py-4 text-3xl ">
-                        <summary className="flex justify-between items-center cursor-pointer">
-                            What's the best way to prepare for coding interviews?
-                        </summary>
-                        <p className="mt-3 text-xl px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
-                    </details>
+                <div className='flex flex-col w-full'>
+                    <div className='mb-3'>
+                        <details class="border-b border-gray-300 py-4 text-base ">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                What's the best way to prepare for coding interviews?
+                            </summary>
+                            <p class="mt-3  text-base px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
+                        </details>
+                    </div>
+                    <div className='flex justify-between items-center'>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
+                            <p className='font-serif text-lg mr-3'>240k+</p>
+                            <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
+                            <p className='font-serif text-lg'>400k+</p>
+                        </div>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
+                            <button><img className='h-5 w-5 mr-3' src="down.png" /></button>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        
+    {/* new discussions */}
 
-            {/* *************************user-4**************************** */}
-            <div className="w-11/12 h-44 border-2 rounded-3xl flex justify-start items-start p-4">
-                {/* ************************user-img***************************** */}
-                <div className="w-32 h-full flex flex-col border-r-2 pr-6 border-green-400 cursor-pointer">
-                    <img src="user-green.png" alt="logo" className="w-32 h-12 rounded-3xl object-contain"/>
-                    <p className="ml-2 text-center mt-2 text-xl">Rajeev roy</p>
+    <div className='flex flex-col justify-center items-center p-5'>
+            <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
+                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                    <div className='border-b border-blue-400 pb-1'>
+                    <img className='h-8 w-8  ' src="man-2.png" />
+                    </div>
+                    <p>Rajeev</p> 
+                    <p>Kumar</p>
                 </div>
-                {/* ********************user-question***************************** */}
-                <div className="m-4 w-full h-full">
-                    <details className="py-4 text-3xl ">
-                        <summary className="flex justify-between items-center cursor-pointer">
-                            What's the best way to prepare for coding interviews?
-                        </summary>
-                        <p className="mt-3 text-xl px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
-                    </details>
+                <div className='flex flex-col w-full'>
+                    <div className='mb-3'>
+                        <details class="border-b border-gray-300 py-4 text-base ">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                What's the best way to prepare for coding interviews?
+                            </summary>
+                            <p class="mt-3  text-base px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
+                        </details>
+                    </div>
+                    <div className='flex justify-between items-center'>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
+                            <p className='font-serif text-lg mr-3'>56k+</p>
+                            <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
+                            <p className='font-serif text-lg'>23k+</p>
+                        </div>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
+                            <button><img className='h-5 w-5 mr-3' src="down.png" /></button>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        
+    {/* new discussions */}
 
-            {/* *************************user-5**************************** */}
-            <div className="w-11/12 h-44 border-2 rounded-3xl flex justify-start items-start p-4">
-                {/* ************************user-img***************************** */}
-                <div className="w-32 h-full flex flex-col border-r-2 pr-6 border-purple-400 cursor-pointer">
-                    <img src="user-purple.png" alt="logo" className="w-32 h-12 rounded-3xl object-contain"/>
-                        <p className="ml-2 text-center mt-2 text-xl">Ahmad Reza</p>
+    <div className='flex flex-col justify-center items-center p-5'>
+            <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
+                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                    <div className='border-b border-blue-400 pb-1'>
+                    <img className='h-8 w-8  ' src="man-3.png" />
+                    </div>
+                    <p>Ahmad</p> 
+                    <p>Raza</p>
                 </div>
-                {/* ********************user-question***************************** */}
-                <div className="m-4 w-full h-full">
-                    <details className="py-4 text-3xl ">
-                        <summary className="flex justify-between items-center cursor-pointer">
-                            What's the best way to prepare for coding interviews?
-                        </summary>
-                        <p className="mt-3 text-xl px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
-                    </details>
+                <div className='flex flex-col w-full'>
+                    <div className='mb-3'>
+                        <details class="border-b border-gray-300 py-4 text-base ">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                What's the best way to prepare for coding interviews?
+                            </summary>
+                            <p class="mt-3  text-base px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
+                        </details>
+                    </div>
+                    <div className='flex justify-between items-center'>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
+                            <p className='font-serif text-lg mr-3'>91k+</p>
+                            <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
+                            <p className='font-serif text-lg'>820k+</p>
+                        </div>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
+                            <button><img className='h-5 w-5 mr-3' src="down.png" /></button>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        
+    {/* new discussions */}
 
-            {/* *************************user-6**************************** */}
-            <div className="w-11/12 h-44 border-2 rounded-3xl flex justify-start items-start p-4">
-                {/* ************************user-img***************************** */}
-                <div className="w-32 h-full flex flex-col border-r-2 pr-6 border-yellow-400 cursor-pointer">
-                    <img src="user-yellow.png" alt="logo" className="w-32 h-12 rounded-3xl object-contain"/>
-                    <p className="ml-2 text-center mt-2 text-xl">Nikhil Tripathy</p>
+    <div className='flex flex-col justify-center items-center p-5'>
+            <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
+                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                    <div className='border-b border-blue-400 pb-1'>
+                    <img className='h-8 w-8  ' src="woman.png" />
+                    </div>
+                    <p>Gaytri</p> 
+                    <p>Pandit</p>
                 </div>
-                {/* ********************user-question***************************** */}
-                <div className="m-4 w-full h-full">
-                    <details className="py-4 text-3xl ">
-                        <summary className="flex justify-between items-center cursor-pointer">
-                            What's the best way to prepare for coding interviews?
-                        </summary>
-                        <p className="mt-3 text-xl px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
-                    </details>
+                <div className='flex flex-col w-full'>
+                    <div className='mb-3'>
+                        <details class="border-b border-gray-300 py-4 text-base ">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                What's the best way to prepare for coding interviews?
+                            </summary>
+                            <p class="mt-3  text-base px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
+                        </details>
+                    </div>
+                    <div className='flex justify-between items-center'>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
+                            <p className='font-serif text-lg mr-3'>240k+</p>
+                            <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
+                            <p className='font-serif text-lg'>220k+</p>
+                        </div>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
+                            <button><img className='h-5 w-5 mr-3' src="down.png" /></button>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+                
+    {/* new discussions */}
 
-            {/* *************************user-7**************************** */}
-            <div className="w-11/12 h-44 border-2 rounded-3xl flex justify-start items-start p-4">
-                {/* ************************user-img***************************** */}
-                <div className="w-32 h-full flex flex-col border-r-2 pr-6 border-blue-400 cursor-pointer">
-                    <img src="user-blue.png" alt="logo" className="w-32 h-12 rounded-3xl object-contain"/>
-                        <p className="ml-2 text-center mt-2 text-xl">Manikanta korra</p>
+    <div className='flex flex-col justify-center items-center p-5'>
+            <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
+                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                    <div className='border-b border-blue-400 pb-1'>
+                    <img className='h-8 w-8  ' src="woman-1.png" />
+                    </div>
+                    <p>Ganga</p> 
+                    <p>Vyom</p>
                 </div>
-                {/* ********************user-question***************************** */}
-                <div className="m-4 w-full h-full">
-                    <details className="py-4 text-3xl ">
-                        <summary className="flex justify-between items-center cursor-pointer">
-                            What's the best way to prepare for coding interviews?
-                        </summary>
-                        <p className="mt-3 text-xl px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
-                    </details>
+                <div className='flex flex-col w-full'>
+                    <div className='mb-3'>
+                        <details class="border-b border-gray-300 py-4 text-base ">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                What's the best way to prepare for coding interviews?
+                            </summary>
+                            <p class="mt-3  text-base px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
+                        </details>
+                    </div>
+                    <div className='flex justify-between items-center'>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
+                            <p className='font-serif text-lg mr-3'>519k+</p>
+                            <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
+                            <p className='font-serif text-lg'>52k+</p>
+                        </div>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
+                            <button><img className='h-5 w-5 mr-3' src="down.png" /></button>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+                
+    {/* new discussions */}
 
-            {/* *************************user-8**************************** */}
-            <div className="w-11/12 h-44 border-2 rounded-3xl flex justify-start items-start p-4">
-                {/* ************************user-img***************************** */}
-                <div className="w-32 h-full flex flex-col border-r-2 pr-6 border-orange-400 cursor-pointer">
-                    <img src="user-orange.png" alt="logo" className="w-32 h-12 rounded-3xl object-contain"/>
-                        <p className="ml-2 text-center mt-2 text-xl">Nivas anupodu</p>
+    <div className='flex flex-col justify-center items-center p-5'>
+            <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
+                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                    <div className='border-b border-blue-400 pb-1'>
+                    <img className='h-8 w-8  ' src="profile.png" />
+                    </div>
+                    <p>Puneet</p> 
+                    <p>Superstar</p>
                 </div>
-                {/* ********************user-question***************************** */}
-                <div className="m-4 w-full h-full">
-                    <details className="py-4 text-3xl ">
-                        <summary className="flex justify-between items-center cursor-pointer">
-                            What's the best way to prepare for coding interviews?
-                        </summary>
-                        <p classNameName="mt-3 text-xl px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
-                    </details>
+                <div className='flex flex-col w-full'>
+                    <div className='mb-3'>
+                        <details class="border-b border-gray-300 py-4 text-base ">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                What's the best way to prepare for coding interviews?
+                            </summary>
+                            <p class="mt-3  text-base px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
+                        </details>
+                    </div>
+                    <div className='flex justify-between items-center'>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
+                            <p className='font-serif text-lg mr-3'>140k+</p>
+                            <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
+                            <p className='font-serif text-lg'>5k+</p>
+                        </div>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
+                            <button><img className='h-5 w-5 mr-3' src="down.png" /></button>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+                
+    {/* new discussions */}
 
-            {/* *************************user-9**************************** */}
-            <div className="w-11/12 h-44 border-2 rounded-3xl flex justify-start items-start p-4">
-                {/* ************************user-img***************************** */}
-                <div className="w-32 h-full flex flex-col border-r-2 pr-6 border-black-400 cursor-pointer">
-                    <img src="user-black.png" alt="logo" className="w-32 h-12 rounded-3xl object-contain"/>
-                    <p className="ml-2 text-center mt-2 text-xl">Arshak mohomad</p>
+    <div className='flex flex-col justify-center items-center p-5'>
+            <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
+                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                    <div className='border-b border-blue-400 pb-1'>
+                    <img className='h-8 w-8  ' src="boy.png" />
+                    </div>
+                    <p>Anurag</p> 
+                    <p>Ojha</p>
                 </div>
-                {/* ********************user-question***************************** */}
-                <div className="m-4 w-full h-full">
-                    <details className="py-4 text-3xl ">
-                        <summary className="flex justify-between items-center cursor-pointer">
-                            What's the best way to prepare for coding interviews?
-                        </summary>
-                        <p className="mt-3 text-xl px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
-                    </details>
+                <div className='flex flex-col w-full'>
+                    <div className='mb-3'>
+                        <details class="border-b border-gray-300 py-4 text-base ">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                What's the best way to prepare for coding interviews?
+                            </summary>
+                            <p class="mt-3  text-base px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
+                        </details>
+                    </div>
+                    <div className='flex justify-between items-center'>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
+                            <p className='font-serif text-lg mr-3'>37k+</p>
+                            <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
+                            <p className='font-serif text-lg'>54k+</p>
+                        </div>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
+                            <button><img className='h-5 w-5 mr-3' src="down.png" /></button>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+                
+    {/* new discussions */}
 
-            {/* *************************user-10**************************** */}
-            <div className="w-11/12 h-44 border-2 rounded-3xl flex justify-start items-start p-4">
-                {/* ************************user-img***************************** */}
-                <div className="w-32 h-full flex flex-col border-r-2 pr-6 border-green-400 cursor-pointer">
-                    <img src="user-green.png" alt="logo" className="w-32 h-12 rounded-3xl object-contain"/>
-                        <p className="ml-2 text-center mt-2 text-xl">valli jalla</p>
+    <div className='flex flex-col justify-center items-center p-5'>
+            <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
+                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                    <div className='border-b border-blue-400 pb-1'>
+                    <img className='h-8 w-8  ' src="human.png" />
+                    </div>
+                    <p>Denisha</p> 
+                    <p>Vallapu</p>
                 </div>
-                {/* ********************user-question***************************** */}
-                <div className="m-4 w-full h-full">
-                    <details className="py-4 text-3xl ">
-                        <summary className="flex justify-between items-center cursor-pointer">
-                            What's the best way to prepare for coding interviews?
-                        </summary>
-                        <p className="mt-3 text-xl px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
-                    </details>
-                </div>
-            </div>
-
-            {/* *************************user-11**************************** */}
-            <div className="w-11/12 h-44 border-2 rounded-3xl flex justify-start items-start p-4">
-                {/* ************************user-img***************************** */}
-                <div className="w-32 h-full flex flex-col border-r-2 pr-6 border-purple-400 cursor-pointer">
-                    <img src="user-purple.png" alt="logo" className="w-32 h-12 rounded-3xl object-contain"/>
-                        <p className="ml-2 text-center mt-2 text-xl">Sravanti kumar</p>
-                </div>
-                {/* ********************user-question***************************** */}
-                <div className="m-4 w-full h-full">
-                    <details className="py-4 text-3xl ">
-                        <summary className="flex justify-between items-center cursor-pointer">
-                            What's the best way to prepare for coding interviews?
-                        </summary>
-                        <p className="mt-3 text-xl px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
-                    </details>
-                </div>
-            </div>
-
-            {/* *************************user-12**************************** */}
-            <div className="w-11/12 h-44 border-2 rounded-3xl flex justify-start items-start p-4">
-                {/* ************************user-img***************************** */}
-                <div className="w-32 h-full flex flex-col border-r-2 pr-6 border-yellow-400 cursor-pointer">
-                    <img src="user-yellow.png" alt="logo" className="w-32 h-12 rounded-3xl object-contain"/>
-                        <p className="ml-2 text-center mt-2 text-xl">Preethi Zintha</p>
-                </div>
-                {/* ********************user-question***************************** */}
-                <div className="m-4 w-full h-full">
-                    <details className="py-4 text-3xl ">
-                        <summary className="flex justify-between items-center cursor-pointer">
-                            What's the best way to prepare for coding interviews?
-                        </summary>
-                        <p className="mt-3 text-xl px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
-                    </details>
-                </div>
-            </div>
-
-            {/* *************************user-13**************************** */}
-            <div className="w-11/12 h-44 border-2 rounded-3xl flex justify-start items-start p-4">
-                {/* ************************user-img***************************** */}
-                <div className="w-32 h-full flex flex-col border-r-2 pr-6 border-blue-400 cursor-pointer">
-                    <img src="user-blue.png" alt="logo" className="w-32 h-12 rounded-3xl object-contain"/>
-                        <p className="ml-2 mt-2 text-center text-xl">Ram Pothineni</p>
-                </div>
-                {/* ********************user-question***************************** */}
-                <div className="m-4 w-full h-full">
-                    <details className="py-4 text-3xl ">
-                        <summary className="flex justify-between items-center cursor-pointer">
-                            What's the best way to prepare for coding interviews?
-                        </summary>
-                        <p className="mt-3 text-xl px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
-                    </details>
-                </div>
-            </div>
-
-            {/* *************************user-14**************************** */}
-            <div className="w-11/12 h-44 border-2 rounded-3xl flex justify-start items-start p-4">
-                {/* ************************user-img***************************** */}
-                <div className="w-32 h-full flex flex-col border-r-2 pr-6 border-purple-400 cursor-pointer">
-                    <img src="user-purple.png" alt="logo" className="w-32 h-12 rounded-3xl object-contain"/>
-                    <p className="mt-2 text-xl text-center">Sizuka Hozeku</p>
-                </div>
-                {/* ********************user-question***************************** */}
-                <div className="m-4 w-full h-full">
-                    <details className="py-4 text-3xl ">
-                        <summary className="flex justify-between items-center cursor-pointer">
-                            What's the best way to prepare for coding interviews?
-                        </summary>
-                        <p className="mt-3 text-xl px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
-                    </details>
+                <div className='flex flex-col w-full'>
+                    <div className='mb-3'>
+                        <details class="border-b border-gray-300 py-4 text-base ">
+                            <summary class="flex justify-between items-center cursor-pointer">
+                                What's the best way to prepare for coding interviews?
+                            </summary>
+                            <p class="mt-3  text-base px-10">Start with understanding the basics, practice consistently on coding platforms, and focus on problem-solving skills.</p>
+                        </details>
+                    </div>
+                    <div className='flex justify-between items-center'>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
+                            <p className='font-serif text-lg mr-3'>50k+</p>
+                            <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
+                            <p className='font-serif text-lg'>48k+</p>
+                        </div>
+                        <div className='flex items-center justify-center'>
+                            <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
+                            <button><img className='h-5 w-5 mr-3' src="down.png" /></button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
