@@ -8,6 +8,7 @@ import LoginPageComponent from './Components/LoginPageComponent';
 import SignupPageComponent from './Components/SignupPageComponent';
 import ProfileDropdownComponent from './Components/ProfileDropdownComponent';
 import NotificationDropdownComponent from './Components/NotificationDropdownComponent';
+import ChatbotDropComponent from './Components/ChatbotDropComponent';
 import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 
@@ -22,6 +23,7 @@ function App() {
         <LoginPageComponent />
         <SignupPageComponent />
         <HeaderComponent />
+        < ChatbotDropComponent />
         <NotificationDropdownComponent />
         <ProfileDropdownComponent />
         <MobileMenuComponent />
