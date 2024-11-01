@@ -7,9 +7,9 @@ export default function HomePage()
 
   const [lightdarkmode, setLightDarkMode] = useRecoilState(LightDarkModeAtom);
 
-  return (<div className={`h-full w-full flex flex-col content-center items-center font-serif ${lightdarkmode === 1 ? 'bg-stone-900' : 'bg-white'} ${lightdarkmode === 1 ? 'text-gray-400' : 'text-black'} `}>
+  return (<div className={`h-full w-full flex flex-col content-center items-center font-myfont1 ${lightdarkmode === 1 ? 'bg-stone-900' : 'bg-white'} ${lightdarkmode === 1 ? 'text-gray-400' : 'text-black'} `}>
     <div className="flex content-start items-start">
-      <p className="mt-1 text-3xl ">Learn what Matters <br /> <span className="text-5xl">Start Your <span className="text-6xl text-sky-400 border-b-2  border-sky-400 cursor-pointer">Learning</span>  Journey with </span><span className="text-5xl text-sky-400 border-b-2  border-sky-400 cursor-pointer">VignanEdu</span> .</p>
+      <p className="mt-1 text-3xl ">Learn what Matters <br /> <span className="text-5xl">Start Your <span className="text-6xl text-sky-400 border-b-2  border-sky-400 cursor-pointer font-medium">Learning</span>  Journey with </span><span className="text-5xl font-medium text-sky-400 border-b-2  border-sky-400 cursor-pointer">VignanEdu</span> .</p>
     </div>
 
     <div className=' w-5/6 h-full grid grid-cols-1 place-items-center'>
@@ -31,7 +31,7 @@ export default function HomePage()
         <img src="Hackathon.jpg" alt="Hacathon" className='w-96 h-44 object-cover rounded-xl' />
       </div>
       {/* ************************Hackathon description************************ */}
-      <div className="w-9/12 flex flex-col content-top items-center  font-serif">
+      <div className="w-9/12 flex flex-col content-top items-center  font-myfont1">
         <h1 className="text-3xl">Vignan's Mega 48-hr Hackathon is here!</h1>
           <p className="m-2 text-xl text-center">Oct-28 to Oct-29 <br /> </p>
           <button className={'border-2 p-2 w-48 mt-2 text-xl rounded-2xl hover:border-blue-400'}>Register</button>
@@ -39,29 +39,29 @@ export default function HomePage()
     </div>
 
     {/* ************************** About Community************************* */}
-    <p className="mt-16 text-5xl md:text-3xl sm:text-2xl font-serif">Connect with Our <span className="text-6xl text-sky-400 w-5/6">Community</span></p>
+    <p className="mt-16 text-5xl md:text-3xl sm:text-2xl font-myfont1">Connect with Our <span className="text-6xl text-sky-400 w-5/6">Community</span></p>
     <div className="m-8 w-10/12 border-b-2  border-l-2 border-gray-300 hover:border-b-2 hover:border-l-2 rounded-2xl hover:border-blue-400 grid grid-cols-1 gap-6 p-6 xl:grid-cols-4 md:grid-cols-2">
         {/* div-2 */}
         <div className="flex justify-center items-center rounded-2xl text-center text-5xl  cursor-pointer">
-          <div className=" rounded-2xl font-bold w-10/12 h-28 flex justify-center items-center border-2 border-sky-400 text-foreground">
+          <div className=" rounded-2xl font-medium w-10/12 h-28 flex justify-center items-center border-2 border-sky-400 text-foreground">
           <p className="text-3xl">20000+ <br /><span className="text-3xl">Students</span></p>
           </div>
         </div>
         {/* div-3 */}
         <div className="flex justify-center items-center rounded-2xl text-center  text-5xl cursor-pointer">
-          <div className=" rounded-2xl font-bold w-10/12 h-28 flex justify-center items-center border-2 border-sky-400  text-foreground">
+          <div className=" rounded-2xl font-medium w-10/12 h-28 flex justify-center items-center border-2 border-sky-400  text-foreground">
           <p className="text-3xl">10000+ <br /><span className="text-3xl">Aluminies</span></p>
           </div>
         </div>
         {/* div-1 */}
         <div className="flex justify-center items-center rounded-2xl text-center text-5xl   cursor-pointer">
-          <div className="rounded-2xl font-bold w-10/12 h-28 flex justify-center items-center border-2  border-sky-400 text-foreground">
-            <p className="text-3xl font-serif">5000+ <br /><span className="text-3xl ">Management</span></p>
+          <div className="rounded-2xl font-medium w-10/12 h-28 flex justify-center items-center border-2  border-sky-400 text-foreground">
+            <p className="text-3xl font-myfont1">5000+ <br /><span className="text-3xl ">Management</span></p>
           </div>
         </div>
         {/* div-4 */}
         <div className="flex justify-center items-center rounded-2xl text-center text-5xl cursor-pointer">
-          <div className="rounded-2xl font-bold w-10/12 h-28 flex justify-center items-center border-2 border-sky-400 text-foreground ">
+          <div className="rounded-2xl font-medium w-10/12 h-28 flex justify-center items-center border-2 border-sky-400 text-foreground ">
           <p className="text-3xl">72nd <br /><span className="text-3xl ">NIRF-rank</span></p>
           </div>
         </div>

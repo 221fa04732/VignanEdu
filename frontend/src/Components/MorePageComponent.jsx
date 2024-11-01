@@ -55,7 +55,7 @@ export default function MorePageComponent()
       ];
   
     return (
-        <div className={`font-serif py-8 ${lightdarkmodevalue === 1 ? 'bg-stone-900'  : 'bg-white'} ${lightdarkmodevalue === 1 ? 'text-gray-400' : 'text-black'}`}>
+        <div className={`font-myfont1 py-8 ${lightdarkmodevalue === 1 ? 'bg-stone-900'  : 'bg-white'} ${lightdarkmodevalue === 1 ? 'text-gray-400' : 'text-black'}`}>
             <h2 className="text-4xl font-semibold text-center  mb-8  text-blue-500">
                 <spam className ={`border-b-2 ${lightdarkmodevalue === 1 ? 'border-white'  : 'border-black'}`}> Events </spam>
                 </h2> 
@@ -122,7 +122,7 @@ export default function MorePageComponent()
             </div>
 
             {/* *******************************Careers************************* */}
-            <h2 className="text-4xl font-semibold font-serif text-center  mb-8">Career Center</h2>
+            <h2 className="text-4xl font-semibold font-myfont1 text-center  mb-8">Career Center</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 ll:grid-cols-4 gap-10 m-10">
                 {careerResources.map((resource) => (
                     <div key={resource.id} className=" shadow-lg rounded-2xl p-6 transform border-2 border-grey-400 hover:border-blue-400 transition-transform duration-300">

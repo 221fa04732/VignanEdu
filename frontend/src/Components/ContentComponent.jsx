@@ -8,6 +8,7 @@ const CoursesPage = lazy(() => import("./CoursesPageComponent"));
 const AssessmentPage = lazy(() => import("./AssessnmentPageComponent"));
 const DiscussionPage = lazy(() => import("./DiscussionPageComponenet"));
 const MorePage = lazy(() => import("./MorePageComponent"));
+const ChapterWiseComponent = lazy(() => import("./ChapterWiseComponent"));
 
 export default function ContentComponent() {
 
@@ -27,6 +28,7 @@ export default function ContentComponent() {
                     <Route path="/AssessmentPage" element={<AssessmentPage />} />
                     <Route path="/DiscussionPage" element={<DiscussionPage />} />
                     <Route path="/MorePage" element={<MorePage />} />
+                    <Route path="/CoursesPage/ArtificialIntelligence" element={<ChapterWiseComponent />} />
                 </Routes>
             </Suspense>
         </div>

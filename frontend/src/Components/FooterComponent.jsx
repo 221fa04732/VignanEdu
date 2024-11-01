@@ -5,7 +5,7 @@ export default function FooterComponent ()
 {
     const LightDarkModeValue = useRecoilValue(LightDarkModeAtom)
     return(<div className={`border-t-2 ${LightDarkModeValue === 1 ? 'border-white' && 'bg-stone-900' : 'border-gray-400' && 'bg-white'} `}>
-        <div className={`grid grid-cols-1 place-content-between font-serif place-items-center p-7 lg:grid-cols-4 sm:grid-cols-2 gap-10 border-b ${LightDarkModeValue === 1 ? 'border-white' : 'border-gray-400'}`}>
+        <div className={`grid grid-cols-1 place-content-between font-myfont1 place-items-center p-7 lg:grid-cols-4 sm:grid-cols-2 gap-10 border-b ${LightDarkModeValue === 1 ? 'border-white' : 'border-gray-400'}`}>
             <div className="flex flex-col items-center">
                 <div className="flex items-center justify-center">
                     <img className="h-12 w-12 gap-1 " src="favicon.png"/>

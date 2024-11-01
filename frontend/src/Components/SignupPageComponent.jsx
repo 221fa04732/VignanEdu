@@ -1,41 +1,33 @@
 import { useRecoilState, useRecoilValue } from "recoil";
 import { LoginPageStatusAtom } from "../Atoms/LoginPageStatusAtom"
-import { SignupPageStatusAtom } from "../Atoms/SignupPageStatusAtom"
 import { LightDarkModeAtom } from "../Atoms/LightDarkModeAtom";
+import { SignupPageStatusAtom } from "../Atoms/SignupPageStatusAtom";
+import {HireFacultyAtom} from "../Atoms/HireFacultyAtom";
 import CloseIconComponent from "./CloseIconComponent";
 import React, { useState } from 'react';
 
 export default function SignupPageComponent() 
-{
-
-    const [signuppagestatus, setsignuppagestatus] = useRecoilState(SignupPageStatusAtom);
+{    
     const [loginpagestatus, setloginpagestatus] = useRecoilState(LoginPageStatusAtom);
     const lightdarkmodevalue = useRecoilValue(LightDarkModeAtom);
+    const [signuppagestatus, setsignuppagestatus] = useRecoilState(SignupPageStatusAtom);
+    const [hirefaculty, sethirefaculty] = useRecoilState(HireFacultyAtom);
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
 
     const handleSubmit = async (event) => {
-        event.preventDefault();
-        if (password !== confirmPassword) {
-            alert("Passwords do not match!");
-            return;
-        }    
+        event.preventDefault();   
     };
     
     return (
-        <div className={`fixed ${signuppagestatus === 0 ? 'hidden' : 'block'}  ${lightdarkmodevalue === 1 ? 'bg-stone-900' : 'bg-white'} text-black z-30 border-2 border-blue-500 w-full h-full flex flex-col items-center justify-center`}>
+        <div className={`fixed ${signuppagestatus === 1 &&  hirefaculty ===0 ? 'block' : 'hidden'}  ${lightdarkmodevalue === 1 ? 'bg-stone-900' : 'bg-white'} text-black z-40 border-2 border-blue-500 w-full h-full flex flex-col items-center justify-center`}>
             <div className="absolute top-0 right-0">
                 <CloseIconComponent />
             </div>
-
-            <div className="flex">
-                <img className="h-12 mb-2" src="logo.png" alt="Logo" />
-            </div>
-            <div className="p-6 rounded w-full max-w-sm border border-blue-500">
+            <div className="p-6 rounded w-myl1 border border-blue-500">
                 <form onSubmit={handleSubmit}>
-                    <h2 className={`text-2xl mb-4 flex justify-center font-serif underline ${lightdarkmodevalue === 1 ? 'text-gray-400' : 'text-black'}`}>Sign Up</h2>
+                    <h2 className={`text-2xl mb-4 flex justify-center font-myfont1 underline ${lightdarkmodevalue === 1 ? 'text-gray-400' : 'text-black'}`}>Student SignUp</h2>
                     <div className="mb-4">
                         <label htmlFor="username" className="block text-gray-500">Username</label>
                         <input
@@ -45,6 +37,10 @@ export default function SignupPageComponent()
                             onChange={(e) => setUsername(e.target.value)}
                             className="w-full p-2 border-2 border-blue-500 rounded mt-1"
                             required
+                            autoComplete="off"
+                            autoCorrect="off"
+                            autoCapitalize="off"
+                            spellCheck="false"
                         />
                     </div>
                     <div className="mb-4">
@@ -56,6 +52,10 @@ export default function SignupPageComponent()
                             onChange={(e) => setEmail(e.target.value)}
                             className="w-full p-2 border-2 border-blue-500 rounded mt-1"
                             required
+                            autoComplete="off"
+                            autoCorrect="off"
+                            autoCapitalize="off"
+                            spellCheck="false"
                         />
                     </div>
                     <div className="mb-4">
@@ -67,22 +67,15 @@ export default function SignupPageComponent()
                             onChange={(e) => setPassword(e.target.value)}
                             className="w-full p-2 border-2 border-blue-500 rounded mt-1"
                             required
-                        />
-                    </div>
-                    <div className="mb-4">
-                        <label htmlFor="confirmPassword" className="block text-gray-500">Confirm Password</label>
-                        <input
-                            type="password"
-                            id="confirmPassword"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                            className="w-full p-2 border-2 border-blue-500 rounded mt-1"
-                            required
+                            autoComplete="off"
+                            autoCorrect="off"
+                            autoCapitalize="off"
+                            spellCheck="false"
                         />
                     </div>
                     <button onClick={async()=>{
                         try {
-                            const response = await fetch("http://localhost:3000/signin", {
+                            const response = await fetch("http://localhost:3000/student/signin", {
                                 method: "POST",
                                 headers: {
                                     "Content-Type": "application/json",
@@ -96,6 +89,9 @@ export default function SignupPageComponent()
                             const data = await response.json(); 
                             alert(data.message);
                             if (response.ok) {
+                                setUsername('')
+                                setEmail('')
+                                setPassword('')
                                 setsignuppagestatus(0)
                             } 
                         } 
@@ -105,6 +101,9 @@ export default function SignupPageComponent()
                     }} type="submit" className="w-full bg-blue-500 text-white p-2 rounded mb-4">Sign Up</button>
                 </form>
                 <p className={`${lightdarkmodevalue === 1 ? 'text-gray-400' : 'text-black'}`}>Already have account ? <button onClick={()=>{
+                    setUsername('')
+                    setEmail('')
+                    setPassword('')
                     setloginpagestatus(1)
                     setsignuppagestatus(0)
                 }} className="text-blue-600" >Back to LogIn</button></p>

@@ -9,8 +9,8 @@ export default function DiscussionPageComponent()
     return(<div className={`pt-5 text-2xl ${lightdarkmode === 1 ? 'bg-stone-900'  : 'bg-white'} ${lightdarkmode === 1 ? 'text-gray-400' : 'text-black'}`}>
           {/* *************************Post a new Discussion****************** */}
           <div className="rounded-3xl mx-16 flex flex-col align-center justify-center">
-            <center><h1 className="w-64 text-5xl border-b-2 text-sky-400 font-serif">Discussions</h1></center>
-            <div className="mt-10 font-serif text-xl">
+            <center><h1 className="w-64 text-5xl border-b-2 text-sky-400 font-myfont1">Discussions</h1></center>
+            <div className="mt-10 font-myfont1 text-xl">
                 <div className='text-blue-400 text-2xl' >Hello Learner !</div>
                 Welcome to Discussions, here you can Post your doubts/problems and also you can answer others doughts.
                 Make sure you follow the community guidelines and message responsibily.
@@ -23,14 +23,14 @@ export default function DiscussionPageComponent()
         {/* **********************************Pre-default Discussions********************************** */}
 
         <div className="mt-10 w-full h-full flex flex-col justify-start items-center gap-10">
-            <h1 className="text-5xl mt-6 mb-9 font-serif hover:text-blue-400">Previous Discussions</h1> 
+            <h1 className="text-5xl mt-6 mb-9 font-myfont1 hover:text-blue-400">Previous Discussions</h1> 
         </div>
 
     {/* new discussions */}
 
         <div className='flex flex-col justify-center items-center p-5'>
             <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
-                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                <div className='flex flex-col items-center justify-center font-myfont1  p-5'>
                     <div className='border-b border-blue-400 pb-1'>
                     <img className='h-8 w-8  ' src="man.png" />
                     </div>
@@ -49,9 +49,9 @@ export default function DiscussionPageComponent()
                     <div className='flex justify-between items-center'>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
-                            <p className='font-serif text-lg mr-3'>500k+</p>
+                            <p className='font-myfont1 text-lg mr-3'>500k+</p>
                             <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
-                            <p className='font-serif text-lg'>23k+</p>
+                            <p className='font-myfont1 text-lg'>23k+</p>
                         </div>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
@@ -66,7 +66,7 @@ export default function DiscussionPageComponent()
 
     <div className='flex flex-col justify-center items-center p-5'>
             <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
-                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                <div className='flex flex-col items-center justify-center font-myfont1  p-5'>
                     <div className='border-b border-blue-400 pb-1'>
                     <img className='h-8 w-8  ' src="man-1.png" />
                     </div>
@@ -85,9 +85,9 @@ export default function DiscussionPageComponent()
                     <div className='flex justify-between items-center'>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
-                            <p className='font-serif text-lg mr-3'>240k+</p>
+                            <p className='font-myfont1 text-lg mr-3'>240k+</p>
                             <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
-                            <p className='font-serif text-lg'>400k+</p>
+                            <p className='font-myfont1 text-lg'>400k+</p>
                         </div>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
@@ -102,7 +102,7 @@ export default function DiscussionPageComponent()
 
     <div className='flex flex-col justify-center items-center p-5'>
             <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
-                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                <div className='flex flex-col items-center justify-center font-myfont1  p-5'>
                     <div className='border-b border-blue-400 pb-1'>
                     <img className='h-8 w-8  ' src="man-2.png" />
                     </div>
@@ -121,9 +121,9 @@ export default function DiscussionPageComponent()
                     <div className='flex justify-between items-center'>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
-                            <p className='font-serif text-lg mr-3'>56k+</p>
+                            <p className='font-myfont1 text-lg mr-3'>56k+</p>
                             <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
-                            <p className='font-serif text-lg'>23k+</p>
+                            <p className='font-myfont1 text-lg'>23k+</p>
                         </div>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
@@ -138,7 +138,7 @@ export default function DiscussionPageComponent()
 
     <div className='flex flex-col justify-center items-center p-5'>
             <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
-                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                <div className='flex flex-col items-center justify-center font-myfont1  p-5'>
                     <div className='border-b border-blue-400 pb-1'>
                     <img className='h-8 w-8  ' src="man-3.png" />
                     </div>
@@ -157,9 +157,9 @@ export default function DiscussionPageComponent()
                     <div className='flex justify-between items-center'>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
-                            <p className='font-serif text-lg mr-3'>91k+</p>
+                            <p className='font-myfont1 text-lg mr-3'>91k+</p>
                             <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
-                            <p className='font-serif text-lg'>820k+</p>
+                            <p className='font-myfont1 text-lg'>820k+</p>
                         </div>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
@@ -174,7 +174,7 @@ export default function DiscussionPageComponent()
 
     <div className='flex flex-col justify-center items-center p-5'>
             <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
-                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                <div className='flex flex-col items-center justify-center font-myfont1  p-5'>
                     <div className='border-b border-blue-400 pb-1'>
                     <img className='h-8 w-8  ' src="woman.png" />
                     </div>
@@ -193,9 +193,9 @@ export default function DiscussionPageComponent()
                     <div className='flex justify-between items-center'>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
-                            <p className='font-serif text-lg mr-3'>240k+</p>
+                            <p className='font-myfont1 text-lg mr-3'>240k+</p>
                             <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
-                            <p className='font-serif text-lg'>220k+</p>
+                            <p className='font-myfont1 text-lg'>220k+</p>
                         </div>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
@@ -210,7 +210,7 @@ export default function DiscussionPageComponent()
 
     <div className='flex flex-col justify-center items-center p-5'>
             <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
-                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                <div className='flex flex-col items-center justify-center font-myfont1  p-5'>
                     <div className='border-b border-blue-400 pb-1'>
                     <img className='h-8 w-8  ' src="woman-1.png" />
                     </div>
@@ -229,9 +229,9 @@ export default function DiscussionPageComponent()
                     <div className='flex justify-between items-center'>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
-                            <p className='font-serif text-lg mr-3'>519k+</p>
+                            <p className='font-myfont1 text-lg mr-3'>519k+</p>
                             <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
-                            <p className='font-serif text-lg'>52k+</p>
+                            <p className='font-myfont1 text-lg'>52k+</p>
                         </div>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
@@ -246,7 +246,7 @@ export default function DiscussionPageComponent()
 
     <div className='flex flex-col justify-center items-center p-5'>
             <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
-                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                <div className='flex flex-col items-center justify-center font-myfont1  p-5'>
                     <div className='border-b border-blue-400 pb-1'>
                     <img className='h-8 w-8  ' src="profile.png" />
                     </div>
@@ -265,9 +265,9 @@ export default function DiscussionPageComponent()
                     <div className='flex justify-between items-center'>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
-                            <p className='font-serif text-lg mr-3'>140k+</p>
+                            <p className='font-myfont1 text-lg mr-3'>140k+</p>
                             <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
-                            <p className='font-serif text-lg'>5k+</p>
+                            <p className='font-myfont1 text-lg'>5k+</p>
                         </div>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
@@ -282,7 +282,7 @@ export default function DiscussionPageComponent()
 
     <div className='flex flex-col justify-center items-center p-5'>
             <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
-                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                <div className='flex flex-col items-center justify-center font-myfont1  p-5'>
                     <div className='border-b border-blue-400 pb-1'>
                     <img className='h-8 w-8  ' src="boy.png" />
                     </div>
@@ -301,9 +301,9 @@ export default function DiscussionPageComponent()
                     <div className='flex justify-between items-center'>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
-                            <p className='font-serif text-lg mr-3'>37k+</p>
+                            <p className='font-myfont1 text-lg mr-3'>37k+</p>
                             <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
-                            <p className='font-serif text-lg'>54k+</p>
+                            <p className='font-myfont1 text-lg'>54k+</p>
                         </div>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
@@ -318,7 +318,7 @@ export default function DiscussionPageComponent()
 
     <div className='flex flex-col justify-center items-center p-5'>
             <div className='flex items-start justify-start border-b-2 border-l-2 border-gray-400 hover:border-blue-400 rounded-2xl p-5 w-11/12 gap-10'>
-                <div className='flex flex-col items-center justify-center font-serif  p-5'>
+                <div className='flex flex-col items-center justify-center font-myfont1  p-5'>
                     <div className='border-b border-blue-400 pb-1'>
                     <img className='h-8 w-8  ' src="human.png" />
                     </div>
@@ -337,9 +337,9 @@ export default function DiscussionPageComponent()
                     <div className='flex justify-between items-center'>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-1' src="like.png"/></button>
-                            <p className='font-serif text-lg mr-3'>50k+</p>
+                            <p className='font-myfont1 text-lg mr-3'>50k+</p>
                             <button><img className='h-5 w-5 mr-1' src="up-arrow.png" /></button>
-                            <p className='font-serif text-lg'>48k+</p>
+                            <p className='font-myfont1 text-lg'>48k+</p>
                         </div>
                         <div className='flex items-center justify-center'>
                             <button><img className='h-5 w-5 mr-3' src="up-arrow.png" /></button>
