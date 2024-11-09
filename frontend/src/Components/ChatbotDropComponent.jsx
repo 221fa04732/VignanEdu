@@ -38,7 +38,7 @@ export default function ChatbotDropComponent()
                                 className={`w-full border-none mt-1 ${lightdarkvalue === 1 ?'bg-black': 'bg-white'} focus:outline-none`}
                                 autoComplete="off"
                                 autoCorrect="off"
-                                autoCapitalize="off"
+                                autoCapitalize="off"    
                                 spellCheck="false"  />
                         
                         <button onClick={async()=>{

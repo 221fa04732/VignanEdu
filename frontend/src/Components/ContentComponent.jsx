@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { RecoilRoot, useRecoilValue } from "recoil";
 import { HeaderButtonPathAtom } from "../Atoms/HeaderButtonPathAtom";
 
+
+import Loading from './Loading'
 const HomePage = lazy(() => import("./HomePageComponent"));
 const CoursesPage = lazy(() => import("./CoursesPageComponent"));
 const AssessmentPage = lazy(() => import("./AssessnmentPageComponent"));
@@ -21,7 +23,7 @@ export default function ContentComponent() {
 
     return (
         <div className="pt-12">
-            <Suspense fallback={<div>Loading .... </div>}>
+            <Suspense fallback={<Loading />}>
                 <Routes>
                     <Route path="/HomePage" element={<HomePage />} />
                     <Route path="/CoursesPage" element={<CoursesPage />} />

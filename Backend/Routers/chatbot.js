@@ -7,13 +7,16 @@ router.use(express.json());
 const cors = require('cors');
 router.use(cors());
 
+require('dotenv').config();
+const APIKEY = process.env.ChatBotAPIKey;
+
 
 router.post('/chat',async(req,res)=>{
     const url = 'https://phindsearch-api.p.rapidapi.com/search';
     const options = {
     	method: 'POST',
     	headers: {
-    		'x-rapidapi-key': '7d4ea70568mshf533f2d36c95d05p1b208bjsn8eeb57519e40',
+    		'x-rapidapi-key': APIKEY,
     		'x-rapidapi-host': 'phindsearch-api.p.rapidapi.com',
     		'Content-Type': 'application/json'
     	},

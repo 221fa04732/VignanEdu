@@ -2,12 +2,13 @@
 const express = require ('express')
 const cors = require('cors')
 const app = express();
-const port = 3000;
 const chatbot = require('./Routers/chatbot');
 const student = require('./Routers/student')
 const faculty = require('./Routers/faculty')
 const admin = require('./Routers/admin')
 
+require('dotenv').config();
+const PORT = process.env.PORT || 5000
 
 // middlewares
 app.use(cors())
@@ -22,6 +23,6 @@ app.use('/admin', admin.router)
 
 
 // listining on port
-app.listen(port , ()=>{
-    console.log(`listining on ${port} port`)
+app.listen(PORT , ()=>{
+    console.log(`listining on port`)
 });

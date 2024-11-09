@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import { LightDarkModeAtom } from '../Atoms/LightDarkModeAtom';
@@ -6,7 +7,7 @@ export default function DiscussionPageComponent()
 {
     const [lightdarkmode, setLightDarkMode] = useRecoilState(LightDarkModeAtom);
 
-    return(<div className={`pt-5 text-2xl ${lightdarkmode === 1 ? 'bg-stone-900'  : 'bg-white'} ${lightdarkmode === 1 ? 'text-gray-400' : 'text-black'}`}>
+    return(<div className={` pt-5 text-2xl ${lightdarkmode === 1 ? 'bg-stone-900'  : 'bg-white'} ${lightdarkmode === 1 ? 'text-gray-400' : 'text-black'}`}>
           {/* *************************Post a new Discussion****************** */}
           <div className="rounded-3xl mx-16 flex flex-col align-center justify-center">
             <center><h1 className="w-64 text-5xl border-b-2 text-sky-400 font-myfont1">Discussions</h1></center>
