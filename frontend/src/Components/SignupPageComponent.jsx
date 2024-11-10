@@ -2,15 +2,18 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { LoginPageStatusAtom } from "../Atoms/LoginPageStatusAtom"
 import { LightDarkModeAtom } from "../Atoms/LightDarkModeAtom";
 import { SignupPageStatusAtom } from "../Atoms/SignupPageStatusAtom";
+import {FloatNotificationAtom} from "../Atoms/FloatNotificationAtom";
 import {HireFacultyAtom} from "../Atoms/HireFacultyAtom";
 import CloseIconComponent from "./CloseIconComponent";
 import React, { useState } from 'react';
+import { set } from "mongoose";
 
 export default function SignupPageComponent() 
 {    
     const [loginpagestatus, setloginpagestatus] = useRecoilState(LoginPageStatusAtom);
     const lightdarkmodevalue = useRecoilValue(LightDarkModeAtom);
     const [signuppagestatus, setsignuppagestatus] = useRecoilState(SignupPageStatusAtom);
+    const [floatnotification, setfloatnotification] = useRecoilState(FloatNotificationAtom);
     const [hirefaculty, sethirefaculty] = useRecoilState(HireFacultyAtom);
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -87,16 +90,31 @@ export default function SignupPageComponent()
                                 }),
                             });
                             const data = await response.json(); 
-                            alert(data.message);
                             if (response.ok) {
                                 setUsername('')
                                 setEmail('')
                                 setPassword('')
                                 setsignuppagestatus(0)
+                                setfloatnotification({
+                                    message: data.message,
+                                    colour: 0,
+                                    show: true
+                                })
                             } 
+                            else{
+                                setfloatnotification({
+                                    message: data.message,
+                                    colour: 1,
+                                    show: true
+                                })
+                            }
                         } 
                         catch (error) {
-                            alert("An error occurred");
+                            setfloatnotification({
+                                message: "Server Error",
+                                colour: 1,
+                                show: true
+                            })
                         }
                     }} type="submit" className="w-full bg-blue-500 text-white p-2 rounded mb-4">Sign Up</button>
                 </form>

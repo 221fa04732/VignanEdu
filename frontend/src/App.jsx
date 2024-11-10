@@ -10,6 +10,7 @@ import ProfileDropdownComponent from './Components/ProfileDropdownComponent';
 import NotificationDropdownComponent from './Components/NotificationDropdownComponent';
 import ChatbotDropComponent from './Components/ChatbotDropComponent';
 import HireFacultyPage from './Components/HireFacultyPage';
+import FloatNotification from './Components/FloatNotification'
 import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 
@@ -21,6 +22,7 @@ function App() {
     <div>
       <RecoilRoot>
       <BrowserRouter>
+        <FloatNotification />
         <LoginPageComponent />
         <SignupPageComponent />
         <HireFacultyPage />

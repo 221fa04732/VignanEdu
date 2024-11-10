@@ -3,6 +3,7 @@ import { useRecoilState } from "recoil";
 import { ChatbotAtom } from "../Atoms/ChatbotAtom";
 import { LightDarkModeAtom } from "../Atoms/LightDarkModeAtom";
 import { LoginStatusAtom } from "../Atoms/LoginStatusAtom";
+import {FloatNotificationAtom} from '../Atoms/FloatNotificationAtom';
 
 export default function ChatbotDropComponent()
 {
@@ -10,6 +11,7 @@ export default function ChatbotDropComponent()
     const [chatbot, setChatbot] = useRecoilState(ChatbotAtom)
     const [lightdarkvalue, setlightdarkmode] = useRecoilState(LightDarkModeAtom)
     const [loginstatus, setloginstatus] = useRecoilState(LoginStatusAtom)
+    const [floatnotification, setfloatnotification] = useRecoilState(FloatNotificationAtom);
     const [question, setquestion] = useState('');
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -54,14 +56,17 @@ export default function ChatbotDropComponent()
                                     }),
                                 });
                                 const data = await response.json();
-                                console.log(data)
                                 if (response.ok) {
                                 document.getElementById('ans').innerHTML = data.answer;
                                 
                                 } 
                             } 
                             catch (error) {
-                                alert("An error occurred");
+                                setfloatnotification({
+                                    message: "Server Error",
+                                    colour: 1,
+                                    show: true
+                                });
                             }
                         }} type="submit" className="w-8 h-8 p-2 rounded"><img src="send.png" alt="" /></button>
                         </div>

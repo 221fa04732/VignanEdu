@@ -4,6 +4,7 @@ import {LightDarkModeAtom} from '../Atoms/LightDarkModeAtom'
 import {AssessmentDescAtom} from '../Atoms/AssessmentDescAtom'
 import { LoginStatusAtom } from '../Atoms/LoginStatusAtom';
 import { LoginTypeAtom } from '../Atoms/LoginTypeAtom';
+import {FloatNotificationAtom} from '../Atoms/FloatNotificationAtom';
 
 
 export default function Assessment5(){
@@ -11,6 +12,7 @@ const [lightdarkvalue, setlightdarkmode] = useRecoilState(LightDarkModeAtom)
 const [assessment, setassessment] = useRecoilState(AssessmentDescAtom)
 const [loginstatus, setloginstatus] = useRecoilState(LoginStatusAtom)
 const [logintype, setlogintype] = useRecoilState(LoginTypeAtom)
+const [floatNotification, setFloatNotification] = useRecoilState(FloatNotificationAtom)
 
 
 
@@ -80,7 +82,11 @@ const questions = [
 
   const startQuiz = () => {
     if(loginstatus === 0){
-      alert("Please login to start the quiz")
+      setFloatNotification({
+        message: 'Please login to start the quiz',
+        colour: 1,
+        show: true
+      })
       return
     }
     else{

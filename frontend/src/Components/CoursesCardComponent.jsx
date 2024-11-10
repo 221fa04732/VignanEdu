@@ -3,19 +3,25 @@ import { useSetRecoilState } from 'recoil'
 import { LightDarkModeAtom } from '../Atoms/LightDarkModeAtom'
 import { HeaderButtonPathAtom } from '../Atoms/HeaderButtonPathAtom';
 import { LoginStatusAtom } from '../Atoms/LoginStatusAtom';
+import {FloatNotificationAtom} from '../Atoms/FloatNotificationAtom';
 
 export default function CourseCardComponent(props)
 {
     const [lightdarkvalue, setlightdarkmode] = useRecoilState(LightDarkModeAtom)  
     const changePath = useSetRecoilState(HeaderButtonPathAtom);
     const [loginstatus, setloginstatus] = useRecoilState(LoginStatusAtom);
+    const [floatnotification, setfloatnotification] = useRecoilState(FloatNotificationAtom);
 
     function decideButton(){
         if(loginstatus === 0){
-            alert('Please Login to start the course');
+            setfloatnotification({
+                message: 'Please Login to start the course',
+                colour: 1,
+                show: true
+            });
         }
         else{
-            changePath('/CoursesPage/Artificial Intelligence');
+            changePath('/CoursesPage/ArtificialIntelligence');
         }
     }
 
@@ -35,7 +41,7 @@ export default function CourseCardComponent(props)
                 <div>Instructure : {props.instructor}</div>
             </div>
             <button onClick={()=>{
-                changePath('/CoursesPage/ArtificialIntelligence');
+                decideButton();
             }} className="bg-blue-500 text-black p-2 rounded mt-2 pl-5 pr-5">Start Course</button>
         </div>
     </div>)

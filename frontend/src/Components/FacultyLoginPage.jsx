@@ -3,8 +3,10 @@ import { LoginPageStatusAtom } from "../Atoms/LoginPageStatusAtom"
 import { LoginStatusAtom } from "../Atoms/LoginStatusAtom"
 import { UserdataAtom } from "../Atoms/UserdataAtom"
 import { LightDarkModeAtom } from "../Atoms/LightDarkModeAtom"
+import {FloatNotificationAtom} from "../Atoms/FloatNotificationAtom"
 
 import React, { useState } from 'react';
+import { set } from "mongoose"
 
 export default function StudentLoginPage()
 {
@@ -12,6 +14,7 @@ export default function StudentLoginPage()
     const [loginstatus, setloginstatus] = useRecoilState(LoginStatusAtom);
     const [userdata, setUserdata] = useRecoilState(UserdataAtom);
     const lightdarkmodevalue = useRecoilValue(LightDarkModeAtom);
+    const [floatnotification, setfloatnotification] = useRecoilState(FloatNotificationAtom);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [empid, setempid] = useState('');
@@ -83,7 +86,6 @@ export default function StudentLoginPage()
                                 }),
                             });
                             const data = await response.json(); 
-                            alert(data.message);
                             if (response.ok) {
                                 setUserdata({
                                     type: "Faculty",
@@ -95,11 +97,26 @@ export default function StudentLoginPage()
                                 setPassword('')
                                 setloginstatus(1)
                                 setloginpagestatus(0)
-
+                                setfloatnotification({
+                                    message: data.message,
+                                    colour: 0,
+                                    show: 1
+                                })
                             } 
+                            else{
+                                setfloatnotification({
+                                    message: data.message,
+                                    colour: 1,
+                                    show: 1
+                                })
+                            }
                         } 
                         catch (error) {
-                            alert("An error occurred");
+                            setfloatnotification({
+                                message: "Server Error",
+                                colour: 1,
+                                show: 1
+                            })
                         }
                     }} type="submit" className="w-full bg-blue-500 text-white p-2 rounded mb-4">Login</button>
                 </form>
