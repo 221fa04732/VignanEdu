@@ -89,7 +89,7 @@ export default function StudentLoginPage()
                     </div>
                     <button onClick={async()=>{
                         try {
-                            const response = await fetch("http://localhost:3000/admin/login", {
+                            const response = await fetch("https://vignanedu-qnil.onrender.com/admin/login", {
                                 method: "POST",
                                 headers: {
                                     "Content-Type": "application/json",

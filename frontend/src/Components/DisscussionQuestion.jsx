@@ -16,7 +16,7 @@ export default function DisscussionQuestion()
         
 
         setInterval(async()=>{
-            const response = await axios.get('http://localhost:1000/get-disscussion')
+            const response = await axios.get('https://vignanedu-qnil.onrender.com/get-disscussion')
 
             setDisscussion(response.data)
 

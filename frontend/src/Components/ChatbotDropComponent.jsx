@@ -45,7 +45,7 @@ export default function ChatbotDropComponent()
                         
                         <button onClick={async()=>{
                             try {
-                                const response = await fetch("http://localhost:3000/chatbot/chat", {
+                                const response = await fetch("https://vignanedu-qnil.onrender.com/chatbot/chat", {
                                     method: "POST",
                                     headers: {
                                         "Content-Type": "application/json",
