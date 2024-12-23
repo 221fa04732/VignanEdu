@@ -5,7 +5,7 @@ import {AssessmentDescAtom} from '../Atoms/AssessmentDescAtom'
 import { LoginStatusAtom } from '../Atoms/LoginStatusAtom';
 import { LoginTypeAtom } from '../Atoms/LoginTypeAtom';
 import {FloatNotificationAtom} from '../Atoms/FloatNotificationAtom';
-import { set } from 'mongoose';
+
 
 
 export default function Assessment7(){

@@ -2,7 +2,6 @@ import { useRecoilState } from "recoil"
 import { NotificationAtom } from "../Atoms/NotificationAtom"
 import {FloatNotificationAtom} from '../Atoms/FloatNotificationAtom'
 import {LoginStatusAtom} from '../Atoms/LoginStatusAtom'
-import { set } from "mongoose"
 
 
 export default function NotificationComponent()

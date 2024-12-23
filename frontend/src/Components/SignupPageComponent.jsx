@@ -6,7 +6,6 @@ import {FloatNotificationAtom} from "../Atoms/FloatNotificationAtom";
 import {HireFacultyAtom} from "../Atoms/HireFacultyAtom";
 import CloseIconComponent from "./CloseIconComponent";
 import React, { useState } from 'react';
-import { set } from "mongoose";
 
 export default function SignupPageComponent() 
 {    

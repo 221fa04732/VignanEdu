@@ -11,28 +11,32 @@ export default function DisscussionQuestion()
 
    
 
-    // useEffect(()=>{
+    useEffect(()=>{  
 
         
 
-    //     setInterval(async()=>{
-    //         const response = await axios.get('http://localhost:1000/get-disscussion')
+        setInterval(async()=>{
+            const response = await axios.get('http://localhost:1000/get-disscussion')
 
-    //         setDisscussion(response.data)
+            setDisscussion(response.data)
 
             
-    //     },1000)
-    // },[disscussion])
-
-    console.log(disscussion.disscussion[0])
+        },1000)
+    },[disscussion])
 
     return (
-        <div>
+        <div className='pt-10'>
+            <div className='flex items-center justify-center'>
+                PREVIOUS DISSCUSSION    
+            </div>
+            <div>
             {disscussion.disscussion.map((item, index) => (
                 <div key={index}>
                     <DisplayQuestion item = {item}/>
                 </div>
             ))}
         </div>
+        </div>
+        
     );
 }

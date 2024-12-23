@@ -1,11 +1,17 @@
 import { useState } from "react"
 import {FloatNotificationAtom} from '../Atoms/FloatNotificationAtom';
+import { LightDarkModeAtom } from "../Atoms/LightDarkModeAtom";
 import { useRecoilState } from "recoil";
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
+
 
 export default function Disscussion()
 {
 
     const [floatnotification, setfloatnotification] = useRecoilState(FloatNotificationAtom);
+    const [lightdarkmode, setLightDarkMode] = useRecoilState(LightDarkModeAtom);
     const [question, setQuestion] = useState('')
 
     async function handlesubmit(event) {
@@ -47,19 +53,23 @@ export default function Disscussion()
 
     return(<div className="w-full flex flex-col items-center justify-center gap-2">
         <div>DISSCUSSION</div>
-        <form onSubmit={handlesubmit} className="w-full flex flex-col items-center justify-center gap-2">
+        <form onSubmit={handlesubmit} className=" flex flex-col justify-between gap-2 border border-blue-400 rounded-xl w-11/12 p-3 h-52">
             <textarea 
-                className="border-2 border-black w-full rounded p-2 h-32"
+                className={`h-44 focus:outline-none resize-none ${lightdarkmode === 1 ? 'bg-stone-900 text-gray-400' : 'bg-white text-black'}`}
                 placeholder="Create a new disscussion "
                 type="text"
                 id="question"
                 value={question}
-                onChange={(e) => setQuestion(e.target.value)}
+                onChange={(e) => setQuestion(e.target.value)}     
                 autoComplete="off"
                 autoCorrect="off"
                 autoCapitalize="off"
                 spellCheck="false" ></textarea>
-            <button className="bg-blue-700 p-1 pl-4 pr-4 rounded" type="submit">subbmit</button>
+                <button className="flex justify-end" type="submit">
+                    <Button variant="contained" endIcon={<SendIcon />}>
+                        Post
+                    </Button>
+                </button>
         </form>
     </div>)
 }
