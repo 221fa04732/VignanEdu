@@ -11,18 +11,18 @@ export default function DisscussionQuestion()
 
    
 
-    useEffect(()=>{  
+    // useEffect(()=>{  
 
         
 
-        setInterval(async()=>{
-            const response = await axios.get('https://vignanedu-qnil.onrender.com/get-disscussion')
+    //     setInterval(async()=>{
+    //         const response = await axios.get('https://vignanedu-qnil.onrender.com/get/disscussion')
 
-            setDisscussion(response.data)
+    //         setDisscussion(response.data)
 
             
-        },1000)
-    },[disscussion])
+    //     },1000)
+    // },[])
 
     return (
         <div className='pt-10'>

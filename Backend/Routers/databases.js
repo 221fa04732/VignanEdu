@@ -29,16 +29,35 @@ const chatSchema = mongoose.Schema({
     ans : String,
 })
 
+const answerSchema = new mongoose.Schema({
+    answer : String,
+    like: Number,
+    dislike : Number,
+    upvote: Number,
+    downvote: Number
+})
+
+const questionSchema = new mongoose.Schema({
+    question: String,
+    like: Number,
+    dislike : Number,
+    upvote: Number,
+    downvote: Number,
+    answers: [answerSchema]
+})
+
 
 
 const studentdb =mongoose.model('studentdb' ,studentSchema)
 const facultydb =mongoose.model('facultydb' ,facultySchema)
 const admindb =mongoose.model('admindb' , AdminSchema)
+const disscussion = mongoose.model('disscussion', questionSchema)
 
 
 
 module.exports={
     studentdb : studentdb,
     facultydb : facultydb,
-    admindb : admindb
+    admindb : admindb,
+    disscussion : disscussion,
 }
