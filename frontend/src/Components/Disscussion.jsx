@@ -17,7 +17,7 @@ export default function Disscussion()
     async function handlesubmit(event) {
         event.preventDefault();
         try {
-            const response = await fetch('https://vignanedu-qnil.onrender.com/create-disscussion', {
+            const response = await fetch('https://vignanedu-qnil.onrender.com/create/disscussion', {
                 method: 'POST',
                 headers: {
                     "Content-Type": "application/json"
