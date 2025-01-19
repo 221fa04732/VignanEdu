@@ -25,7 +25,6 @@ export default function ContentComponent() {
         <div className="pt-12">
             <Suspense fallback={<Loading />}>
                 <Routes>
-                    <Route index element={<HomePage />} />
                     <Route path="/HomePage" element={<HomePage />} />
                     <Route path="/CoursesPage" element={<CoursesPage />} />
                     <Route path="/AssessmentPage" element={<AssessmentPage />} />
