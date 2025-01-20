@@ -8,7 +8,6 @@ import { useRecoilValue, useSetRecoilState, useRecoilState } from "recoil";
 import { LightDarkModeAtom } from "../Atoms/LightDarkModeAtom";
 import {MobileMenuAtom} from "../Atoms/MobileMenuAtom"
 import MorePageButtonComponent from "./MorePageComponent";
-import { Link } from "react-router-dom";
 
 export default function HeaderComponent()
 {
@@ -21,11 +20,11 @@ export default function HeaderComponent()
             <LogoComponent />   
         </div>
         <div className={`hidden md:flex items-center ${LightDarkModeValue=== 1 ? 'text-gray-400' : 'text-black'}`}>
-            <Link to={'/HomePage'}><HeaderButtonComponent name= {'HOME'} /></Link>
-            <Link to={'/CoursesPage'}><HeaderButtonComponent name= {'COURSES'} /></Link>
-            <Link to={'/AssessmentPage'}><HeaderButtonComponent name= {'ASSESSMENT'} /></Link>
-            <Link to={'/DiscussionPage'}><HeaderButtonComponent name= {'DISSCUSSION'} /></Link>
-            <Link to={'/MorePage'}><HeaderButtonComponent name= {'MORE'} /></Link>
+            <HeaderButtonComponent name= {'HOME'} path={'/HomePage'} />
+            <HeaderButtonComponent name={'COURSES'} path={'/CoursesPage'}/>
+            <HeaderButtonComponent name={'ASSESSMENT'} path={'/AssessmentPage'}/>
+            <HeaderButtonComponent name={'DISSCUSSION'} path={'/DiscussionPage'}/>   
+            <HeaderButtonComponent name={'MORE'} path={'/MorePage'}/>
         </div>
         <div className = {`md:hidden`}>
             <button onClick={()=>{
