@@ -1,7 +1,5 @@
-import { Suspense, lazy, useEffect } from "react";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
-import { RecoilRoot, useRecoilValue } from "recoil";
-import { HeaderButtonPathAtom } from "../Atoms/HeaderButtonPathAtom";
+import { Suspense, lazy} from "react";
+import { Routes, Route} from "react-router-dom";
 
 
 import Loading from './Loading'
@@ -14,13 +12,6 @@ const ChapterWiseComponent = lazy(() => import("./ChapterWiseComponent"));
 
 export default function ContentComponent() {
 
-    const path = useRecoilValue(HeaderButtonPathAtom);
-
-    const navigate = useNavigate();
-    useEffect(() => {
-        navigate(path);
-    }, [path]);
-
     return (
         <div className="pt-12">
             <Suspense fallback={<Loading />}>
@@ -30,7 +21,7 @@ export default function ContentComponent() {
                     <Route path="/AssessmentPage" element={<AssessmentPage />} />
                     <Route path="/DiscussionPage" element={<DiscussionPage />} />
                     <Route path="/MorePage" element={<MorePage />} />
-                    <Route path="/CoursesPage/ArtificialIntelligence" element={<ChapterWiseComponent />} />
+                    <Route path="/CoursesPage/SpecificCourses" element={<ChapterWiseComponent />} />
                 </Routes>
             </Suspense>
         </div>

@@ -1,14 +1,14 @@
 import { useRecoilState } from 'recoil'
-import { useSetRecoilState } from 'recoil'
 import { LightDarkModeAtom } from '../Atoms/LightDarkModeAtom'
-import { HeaderButtonPathAtom } from '../Atoms/HeaderButtonPathAtom';
 import { LoginStatusAtom } from '../Atoms/LoginStatusAtom';
 import {FloatNotificationAtom} from '../Atoms/FloatNotificationAtom';
+import { useNavigate } from 'react-router-dom';
 
 export default function CourseCardComponent(props)
 {
+
+    const navigate = useNavigate();
     const [lightdarkvalue, setlightdarkmode] = useRecoilState(LightDarkModeAtom)  
-    const changePath = useSetRecoilState(HeaderButtonPathAtom);
     const [loginstatus, setloginstatus] = useRecoilState(LoginStatusAtom);
     const [floatnotification, setfloatnotification] = useRecoilState(FloatNotificationAtom);
 
@@ -21,7 +21,7 @@ export default function CourseCardComponent(props)
             });
         }
         else{
-            changePath('/CoursesPage/ArtificialIntelligence');
+            navigate('/CoursesPage/SpecificCourses')
         }
     }
 
